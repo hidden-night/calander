@@ -1,12 +1,10 @@
-#ifndef calander_h_by_night
-#define calander_h_by_night
+#ifndef CALANDER_H_BY_NIGHT
+#define CALANDER_H_BY_NIGHT
 
 class Calander
 {
 	private:
-		static inline const int dec_31_1950{1950};
 		static inline const int n_months[]{31,28,31,30,31,30,31,31,30,31,30,31};
-		static inline const int l_months[]{31,29,31,30,31,30,31,31,30,31,30,31};
 
 		bool leap_year(const int& year) const;
 		int odd_days();
