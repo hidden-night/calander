@@ -14,6 +14,7 @@ class Calander
 		bool m_valid{};
 		int m_odd_days{};
 	public:
+		Calander ();
 		Calander (int day,int month,int year);
 		bool valid() const;
 		void print() const;

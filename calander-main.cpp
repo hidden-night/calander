@@ -12,6 +12,7 @@ int main()
 	{
 		std::cout<<'\n';
 		date.print();
+		std::cout<<'\n';
 	}
 	else
 		std::cerr<<"\033[31m"<<"Given date is not valid\n"<<"\033[0m";

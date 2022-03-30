@@ -44,8 +44,10 @@ bool Calander::check_date()
 		return true;
 }
 
-//default constructor
-Calander::Calander (int day=0,int month=0,int year=0):m_date{day,month,year},m_odd_days{odd_days()},m_valid{check_date()}
+//constructor
+Calander::Calander ()=default;
+
+Calander::Calander (int day,int month,int year):m_date{day,month,year},m_odd_days{odd_days()},m_valid{check_date()}
 {
 }
 
@@ -59,13 +61,13 @@ bool Calander::valid() const
 void Calander::print() const
 {
 	int date{1};
-	std::cout<<"Su Mo Tu We Th Fr Sa\n";
+	std::cout<<"\033[1;4m"<<"Su Mo Tu We Th Fr Sa"<<"\033[0m"<<'\n';
 	for(int blank{};blank<m_odd_days;blank++)
 		std::cout<<"   ";
 	for (int i{m_odd_days};i<7;i++)
 	{
 		if (date==m_date[0])
-			std::cout<<"\033[32m";
+			std::cout<<"\033[1;32m";
 		if (i!=m_odd_days)
 			std::cout<<"  "<<date;
 		else
@@ -88,7 +90,7 @@ void Calander::print() const
 			if (week>0)
 				std::cout<<" ";
 			if (date==m_date[0])
-				std::cout<<"\033[32m";
+				std::cout<<"\033[1;32m";
 			if (date<10)
 				std::cout<<" "<<date;
 			else
