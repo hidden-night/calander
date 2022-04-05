@@ -18,6 +18,7 @@ class Calander
 		Calander (int day,int month,int year);
 		bool valid() const;
 		void print() const;
+		friend std::istream& operator>>(std::istream& in,Calander& calander);
 };
 
 #endif

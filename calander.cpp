@@ -103,3 +103,13 @@ void Calander::print() const
 		std::cout<<'\n';
 	}
 }
+
+//overloaded input operator
+std::istream& operator>>(std::istream& in,Calander& calander)
+{
+	char temp{};
+	in>>calander.m_date[0]>>temp>>calander.m_date[1]>>temp>>calander.m_date[2];
+	calander.m_odd_days=calander.odd_days();
+	calander.m_valid=calander.check_date();
+	return in;
+}
